@@ -4,16 +4,17 @@
   "private": true,
   "description": "An integrated job search, application, tailoring and interview-prep engine. Local-first.",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run env && next dev",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "db:push": "prisma db push",
+    "db:push": "npm run env && prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
     "db:reset": "prisma db push --force-reset && npm run db:seed",
-    "setup": "prisma generate && prisma db push && npm run db:seed"
+    "setup": "npm run env && prisma generate && prisma db push && npm run db:seed",
+    "env": "node scripts/ensure-env.mjs"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
