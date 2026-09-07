@@ -88,6 +88,7 @@ export function AtomForm({
                   defaultValue={atom?.title}
                   required
                   className="field"
+                  placeholder="Dissertation — regional inflation and voting"
                 />
               </Labelled>
 
