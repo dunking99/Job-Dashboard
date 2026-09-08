@@ -82,13 +82,12 @@ export function AtomForm({
         <div className="flex flex-col gap-4">
           <Panel title="What this is">
             <div className="flex flex-col gap-3">
-              <Labelled label="Title" hint="A short internal label — not CV prose.">
+              <Labelled label="Title" hint="A short internal label">
                 <input
                   name="title"
                   defaultValue={atom?.title}
                   required
                   className="field"
-                  placeholder="Dissertation — regional inflation and voting"
                 />
               </Labelled>
 
@@ -102,8 +101,8 @@ export function AtomForm({
                     ))}
                   </select>
                 </Labelled>
-                <Labelled label="Your role">
-                  <input name="role" defaultValue={atom?.role} className="field" placeholder="Research Intern" />
+                <Labelled label="Your Role">
+                  <input name="role" defaultValue={atom?.role} className="field" />
                 </Labelled>
               </div>
 
@@ -112,7 +111,7 @@ export function AtomForm({
                   <input name="organisation" defaultValue={atom?.organisation} className="field" />
                 </Labelled>
                 <Labelled label="Location">
-                  <input name="location" defaultValue={atom?.location} className="field" placeholder="London" />
+                  <input name="location" defaultValue={atom?.location} className="field" />
                 </Labelled>
               </div>
 
@@ -143,20 +142,19 @@ export function AtomForm({
 
               <Labelled
                 label="Context"
-                hint="What actually happened, in plain prose. Raw material for later phrasing — not a finished bullet."
+                hint="What actually happened. Raw material for later phrasing — not a finished bullet."
               >
                 <textarea name="summary" defaultValue={atom?.summary} rows={4} className="field" />
               </Labelled>
 
               <Labelled
-                label="Quantified result"
-                hint="The number behind it. Leave empty rather than inventing one — an empty metric is honest, a fabricated one is a liability."
+                label="Quantified Result"
+                hint="The numbers behind it."
               >
                 <input
                   name="metric"
                   defaultValue={atom?.metric}
                   className="field"
-                  placeholder="Cleared 120+ cases in 10 weeks"
                 />
               </Labelled>
             </div>
@@ -220,7 +218,7 @@ export function AtomForm({
 
           <Panel
             title="Skills evidenced"
-            subtitle="Only tagged skills count towards match scores. An untagged entry is invisible to the engine."
+            subtitle="Only tagged skills count towards match scores."
           >
             {selectedSkills.size > 0 && (
               <ul className="mb-3 flex flex-col gap-1.5">
